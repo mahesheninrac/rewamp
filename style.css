@@ -11,6 +11,19 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .header .wrap {
     position: relative;
     /* max-width: none; */
@@ -369,7 +382,37 @@ img {
     /* opacity: 0; */
 }
 
+.main-block2--steps-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://tumodo.io/img/graph-2.svg) left bottom 170px no-repeat;
+    background-size: 1530px auto;
+    transition: max-width 2s linear;
+    max-width: 0;
+}
 
+
+
+@media (max-width: 2599px) {
+    .main-block2--steps-bg {
+        background-position: left bottom 180px;
+        background-size: 1360px auto;
+    }
+}
+
+@media (max-width: 1599px) {
+    .main-block2--steps-bg {
+        background-size: 1020px auto;
+    }
+}
+
+
+.main-block2--steps._visible .main-block2--steps-bg {
+    max-width: 100%;
+}
 
 @media (max-width: 1099px) {
     .main-block2-step {
@@ -791,10 +834,98 @@ body {
         height: 40px;
     }
 
+    .companies-logotips img {
+        width: 40px;
+        height: 40px;
+    }
+
 
 }
 
 
 
 
+
 /* support chat end */
+
+.companies-logotips img:first-child {
+    z-index: 5;
+}
+
+.companies-logotips img:nth-child(2) {
+    z-index: 4;
+}
+
+
+.companies-logotips img+img {
+    margin-left: -24px;
+    position: relative;
+}
+
+/* footer */
+
+
+.footer {
+    position: relative;
+    padding: 100px 0;
+    background: #fff;
+    border-radius: 60px 60px 0 0;
+    margin-top: -100px;
+}
+
+.footer-top {
+    gap: 40px 20px;
+    padding-bottom: 32px;
+}
+
+.footer-top__title {
+    font-size: 20px;
+    line-height: 140%;
+    margin-bottom: 16px;
+    color: #404040;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.footer-nav-column ul a {
+    color: #000;
+}
+
+@media (max-width: 2599px) {
+    .footer {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 1599px) {
+    .footer {
+        border-radius: 44px 44px 0 0;
+        margin-top: -44px;
+    }
+
+    .footer-top__title {
+        font-size: 18px;
+    }
+
+    .footer-nav-column ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        border-radius: 32px 32px 0 0;
+        margin-top: -44px;
+    }
+
+    .footer-top {
+        gap: 40px 16px;
+        padding-bottom: 8px;
+    }
+}
+
+.footer-bottom {}
+
+
+
+/* footer end */

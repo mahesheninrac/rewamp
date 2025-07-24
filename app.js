@@ -1,36 +1,74 @@
-// function findMissingNumber(arr) {
-//     let n = arr.length + 1;
-//     const expectedSum = (n * (n + 1)) / 2
-//     const actualSum = arr.reduce((a, b) => a + b, 0)
-//     return expectedSum - actualSum
-// }
 
-// console.log(findMissingNumber([8, 2, 4, 5, 3, 7, 1])); // Output: 6
+document.addEventListener("DOMContentLoaded", () => {
+    const chatItems = document.querySelectorAll(".support-chat__item");
+    const delayBetweenMessages = 1000; // delay per message
+    const delayBetweenItems = 800;     // delay between chat blocks
 
-function weightedUniformString(s, queries) {
-    const weights = new Set()
-    // console.log(weights)
-    let currentChar = "";
-    let currentCount = 0;
-
-    for (let char of s) {
-        const charWeight = char.charCodeAt(0) - 96;
-
-        if (char === currentChar) {
-            currentCount++;
-        } else {
-            currentChar = char;
-            currentCount = 1;
-        }
-
-        weights.add(charWeight * currentCount)
+    function animateMessages(item, callback) {
+        const messages = item.querySelectorAll(":scope > div");
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                msg.classList.add("show");
+                if (index === messages.length - 1 && callback) {
+                    setTimeout(callback, delayBetweenMessages);
+                }
+            }, index * delayBetweenMessages);
+        });
     }
 
-    return queries.map(q => weights.has(q) ? "Yes" : "No")
+    function startAnimation(index = 0) {
+        if (index >= chatItems.length) return;
+        animateMessages(chatItems[index], () => {
+            setTimeout(() => startAnimation(index + 1), delayBetweenItems);
+        });
+    }
+
+    startAnimation(); // start from the first chat
+});
+
+
+const items = document.querySelectorAll('.js-scroll-list-item');
+const imageEl = document.getElementById('active-image');
+
+function handleScroll() {
+    if (window.innerWidth <= 768) return;
+
+    let currentImage = null;
+
+    items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+
+        // Check if this text is near the threshold (top 200px)
+        if (rect.top <= 200 && rect.bottom > 200) {
+            currentImage = item.dataset.image;
+        }
+    });
+
+    if (currentImage && imageEl.src.indexOf(currentImage) === -1) {
+        imageEl.style.opacity = 0;
+        setTimeout(() => {
+            imageEl.src = currentImage;
+            imageEl.style.opacity = 1;
+        }, 200);
+    }
 }
 
-let s = "aaabbbbcccddd";
-let queries = [5, 9, 7, 8, 12, 5];
+window.addEventListener('scroll', handleScroll);
 
-const result = weightedUniformString(s, queries)
-console.log(result)
+$('.logo-carousel').owlCarousel({
+    loop: true,
+    margin: 30,
+    dots: false,
+    nav: false,
+    autoplay: false, // Disable Owl's autoplay (we use CSS animation instead)
+    responsive: {
+        0: { items: 3 },
+        600: { items: 5 },
+        1000: { items: 5 }
+    },
+    onInitialized: function (event) {
+        // Duplicate items for seamless loop (stage needs twice the width)
+        var $stage = $(event.target).find('.owl-stage');
+        $stage.append($stage.html());
+    }
+});
