@@ -1,3 +1,16 @@
+const steps = document.querySelectorAll('.main-block2-step');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, { threshold: 0.2 }); // Trigger when 20% visible
+
+steps.forEach(step => observer.observe(step));
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const chatItems = document.querySelectorAll(".support-chat__item");

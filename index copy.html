@@ -47,6 +47,52 @@
         .news-blog:hover .news__image>img {
             transform: scale(1.2);
         }
+
+        .main-block2--steps .main-block2-step {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-block2--steps .main-block2-step.animate {
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .main-block2--steps .main-block2-step {
+            opacity: 0;
+            transform: translateY(20px);
+            /* slight slide-up effect */
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        /* Keyframes for the blink/appear effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .main-block2--steps .col-md-3:nth-child(1) .main-block2-step {
+            animation-delay: 0.2s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(2) .main-block2-step {
+            animation-delay: 0.4s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(3) .main-block2-step {
+            animation-delay: 0.6s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(4) .main-block2-step {
+            animation-delay: 0.8s;
+        }
     </style>
 </head>
 
@@ -315,7 +361,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main-block2--steps-bg"></div>
+                    <!-- <div class="main-block2--steps-bg"></div> -->
                 </div>
             </div>
 
