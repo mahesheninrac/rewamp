@@ -66,6 +66,8 @@ function handleScroll() {
     }
 }
 
+
+
 window.addEventListener('scroll', handleScroll);
 
 $('.logo-carousel').owlCarousel({
@@ -85,3 +87,31 @@ $('.logo-carousel').owlCarousel({
         $stage.append($stage.html());
     }
 });
+
+
+// Function to check if element is in viewport (partially visible)
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight && rect.bottom >= 0
+    );
+}
+
+// Select all elements you want to animate
+const elements = document.querySelectorAll('.animate-on-scroll');
+
+// Scroll event listener
+function handleScroll() {
+    elements.forEach((el) => {
+        if (isInViewport(el)) {
+            el.classList.add('active'); // Start animation
+        } else {
+            el.classList.remove('active'); // Optional: reset when out of view
+        }
+    });
+}
+
+// Run on scroll and on page load
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', handleScroll);
+handleScroll(); // Trigger on load

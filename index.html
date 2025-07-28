@@ -4,22 +4,1021 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Logo Ticker</title>
-
-    <!-- Owl Carousel CSS -->
-
+    <title>Rewamp - Eninrac</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/icofont@1.0.0/dist/icofont.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script defer src="./app.js"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
+        .bg-primary-100 {
+            background-color: #f0f8ff;
+        }
+
+        .fs-12 {
+            font-size: 12px;
+        }
+
+        .fs-14 {
+            font-size: 14px;
+        }
+
+        html *,
+        body * {
+            box-sizing: border-box;
+        }
+
+        .fw-600 {
+            font-weight: 600;
+        }
+
+        .border-radius-20 {
+            border-radius: 20px;
+        }
+
+        .border-radius-40 {
+            border-radius: 40px;
+        }
+
+        .news-blog:hover .news__image>img {
+            transform: scale(1.2);
+        }
+
+        .main-block2--steps .main-block2-step {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-block2--steps .main-block2-step.animate {
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .main-block2--steps .main-block2-step {
+            opacity: 0;
+            transform: translateY(20px);
+            /* slight slide-up effect */
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        /* Keyframes for the blink/appear effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .main-block2--steps .col-md-3:nth-child(1) .main-block2-step {
+            animation-delay: 0.2s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(2) .main-block2-step {
+            animation-delay: 0.4s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(3) .main-block2-step {
+            animation-delay: 0.6s;
+        }
+
+        .main-block2--steps .col-md-3:nth-child(4) .main-block2-step {
+            animation-delay: 0.8s;
+        }
+
+        /* Start state (hidden) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        /* Active state (visible) */
+        .animate-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0px);
         }
     </style>
 </head>
 
 <body>
+    <header class="bg-light shadow-sm header js-scroll-header header js-scroll-header _header-hidden">
+        <div class="wrap">
+            <div class="header-wrap">
+                <div class="logo">
+                    <img src="https://eninrac.com/assets/images/logo_dark.png" alt="Eninrac: Consulting Services">
+                </div>
+                <div class="header-nav">
+                    <nav class="navigation">
+                        <ul class="nav-list js-navigation">
+                            <li>
+                                <span>How Eninrac Work</span>
+                                <div class="submenu">
+                                    <div class="submenu-nav">
+                                        <a href="/in-en/about" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/13cbbd464202c55522d140f5c82a1e5d.svg"
+                                                alt="About us">
+                                            About us
+                                        </a>
+                                        <a href="/in-en/contacts" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/ff3e6ff6c996e3e1639beff91638e0be.svg"
+                                                alt="Contacts">
+                                            Contacts
+                                        </a>
+                                        <a href="/in-en/career" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/819d494e1547d01793ca39dac652962e.svg"
+                                                alt="Career">
+                                            Career
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span>Services</span>
+                                <div class="submenu">
+                                    <div class="submenu-nav">
+                                        <a href="/in-en/service/plane" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/26c8fca2a3184cc3e868a287da63b3d7.svg"
+                                                alt="Flights">
+                                            Flights
+                                        </a>
+                                        <a href="/in-en/service/hotel" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/ae8b5feaf47dcc2c2fbdc7f091b1d932.svg"
+                                                alt="Accommodation">
+                                            Accommodation
+                                        </a>
+                                        <a href="/in-en/service/rail" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/fab8c730831f9bb2abb0cedba9a1f00a.svg"
+                                                alt="Rail">
+                                            Rail
+                                        </a>
+                                        <a href="/in-en/service/transfer" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/e2e402c1e05c95beec753bae565b62ea.svg"
+                                                alt="Car transfer">
+                                            Car transfer
+                                        </a>
+                                    </div>
+                                    <a href="/in-en/pricing" target="_blank" class="submenu-accent ">
+                                        <img class="submenu-accent__image"
+                                            src="https://tumodo.io/storage/uploads/81909246026cd9e4638fe623d5db0199.png"
+                                            alt="Learn moreabout our tariffs">
+                                        <div class="submenu-accent__text">
+                                            Learn more<br>about our tariffs
+                                        </div>
+                                        <div class="btn-icon _blue-bg">
+                                            <svg>
+                                                <use xlink:href="/img/svg-symbols.svg#sym-arrow-link"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Company</span>
+                                <div class="submenu">
+                                    <div class="submenu-nav">
+                                        <a href="/in-en/use-case/leader" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/5229b80b1ccfa3adbe8fa06ae5732d48.svg"
+                                                alt="Leader">
+                                            Leader
+                                        </a>
+                                        <a href="/in-en/use-case/travel-coordinator" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/a96f621f80a7a92fcf468edad7d42799.svg"
+                                                alt="Travel coordinator">
+                                            Travel coordinator
+                                        </a>
+                                        <a href="/in-en/use-case/finance-manager" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/c263426f43ef28e543511e5b3a818905.svg"
+                                                alt="Finance team">
+                                            Finance team
+                                        </a>
+                                        <a href="/in-en/use-case/employee" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/3bc7d0cfc34fe21e2b721cc4284d2ade.svg"
+                                                alt="Employee">
+                                            Employee
+                                        </a>
+                                    </div>
+                                    <a href="/in-en/extra/ebook" target="_blank" class="submenu-accent ">
+                                        <img class="submenu-accent__image"
+                                            src="https://tumodo.io/storage/uploads/ad17a9730a7ed31185c3fef42274db55.png"
+                                            alt="Get a guide for corporate travellers">
+                                        <div class="submenu-accent__text">
+                                            Get a guide<br> for corporate<br> travellers
+                                        </div>
+                                        <div class="btn-icon _white-bg">
+                                            <svg>
+                                                <use xlink:href="/img/svg-symbols.svg#sym-arrow-link"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Resources</span>
+                                <div class="submenu">
+                                    <div class="submenu-nav">
+                                        <a href="/in-en/blog" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/1461e81bd8ee772f2e499c24aa0e2c04.svg"
+                                                alt="Blog">
+                                            Blog
+                                        </a>
+                                        <a href="/in-en/extra/webinars" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/014e5a7b6c1715569a8105f2d4d63150.svg"
+                                                alt="Webinars">
+                                            Webinars
+                                        </a>
+                                        <a href="/in-en/cases" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/983f0d3402785791264eb4dc69c9d358.svg"
+                                                alt="Cases">
+                                            Cases
+                                        </a>
+                                        <a href="/in-en/extra/ebook" class="submenu-nav__item">
+                                            <img src="https://tumodo.io/storage/uploads/2b7b6cae7641cf3f26180a26a695c20b.svg"
+                                                alt="Ebooks">
+                                            Ebooks
+                                        </a>
+                                    </div>
+                                    <a href="/in-en/cases/tabby" target="_blank" class="submenu-accent _light">
+                                        <img class="submenu-accent__image"
+                                            src="https://tumodo.io/storage/uploads/22023d340e79bd77b8b98af7713b5857.png"
+                                            alt="Learn how Tabby reduced travel expenses and carbon footprint">
+                                        <div class="submenu-accent__text">
+                                            Learn how Tabby<br> reduced travel <br>expenses and carbon<br> footprint
+                                        </div>
+                                        <div class="btn-icon _white-bg">
+                                            <svg>
+                                                <use xlink:href="/img/svg-symbols.svg#sym-arrow-link"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://store.eninrac.com/">Store</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-buttons">
+                        <a href="tel:+97145503900">+971(4)550-39-00</a>
+                        <a href="https://login.tumodo.io" class="btn btn--blue" target="_blank">Sign in</a>
+                        <a href="#" class="btn js-btn-popup-open btn--white"
+                            data-redirect-to-hubspot="https://meetings.hubspot.com/raeesah-mahaboob/tumodo">Book a
+                            demo</a>
+                    </div>
+                </div>
+                <div class="burger js-menu-open">
+                    <span class="burger__line burger__line-top"></span>
+                    <span class="burger__line burger__line-bottom"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="main-first main-first--tumodo">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="mb-5 mb-md-0 animate-on-scroll">
+                            <h1 class="fw-bold">Bridging gaps in <span class="d-block fs-70 fw-light">Market
+                                    Research</span></h1>
+                            <div class="main-first__text">
+                                <p>Your one-stop solution for booking business travel quickly, simply and efficiently
+                                </p>
+                            </div>
+                            <a href="#" class="btn btn-dark w-75 text-center">Get started</a>
+                        </div>
+
+                        <!-- <div class="main-first--tumodo-image">
+                            <img src="https://tumodo.io/img/tumodo-main.svg" alt="Tumodo element">
+                        </div> -->
+                    </div>
+                    <div class="col-md-7">
+                        <div class="video-block js-video-block border-radius-40 overflow-auto">
+                            <img src="https://tumodo.io/storage/uploads/de53632c8f350f7da29956c4388e4f27.png"
+                                alt="Bridging gaps in  &amp; Market Research">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-5 mb-3">
+                <div class="d-flex animate-on-scroll row-gap-4 main-block2--steps position-relative _visible">
+                    <div class="col-md-3">
+                        <div class="position-relative main-block2-step">
+                            <div class="d-flex justify-content-center align-items-center bg-primary mb-md-3 text-white "
+                                style="width: 34px; height: 34px;">1</div>
+                            <div class="main-block2-step__title fw-700">Search for hotels and flights</div>
+                            <div class="main-block2-step__image">
+                                <img loading="lazy"
+                                    src="https://tumodo.io/storage/uploads/71f721774b97e906d99d483de3d6c7b3.jpeg"
+                                    alt="">
+                            </div>
+                            <div class="main-block2-step__text">
+                                <span>Select convenient flights and hotels</span> with high-quality service
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative animate-on-scroll main-block2-step">
+                            <div class="d-flex justify-content-center align-items-center bg-primary mb-md-3 text-white "
+                                style="width: 34px; height: 34px;">1</div>
+                            <div class="main-block2-step__title">Search for hotels and flights</div>
+                            <div class="main-block2-step__image">
+                                <img loading="lazy"
+                                    src="https://tumodo.io/storage/uploads/71f721774b97e906d99d483de3d6c7b3.jpeg"
+                                    alt="">
+                            </div>
+                            <div class="main-block2-step__text">
+                                <span>Select convenient flights and hotels</span> with high-quality service
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative main-block2-step">
+                            <div class="d-flex justify-content-center align-items-center bg-primary mb-md-3 text-white "
+                                style="width: 34px; height: 34px;">1</div>
+                            <div class="main-block2-step__title">Search for hotels and flights</div>
+                            <div class="main-block2-step__image">
+                                <img loading="lazy"
+                                    src="https://tumodo.io/storage/uploads/71f721774b97e906d99d483de3d6c7b3.jpeg"
+                                    alt="">
+                            </div>
+                            <div class="main-block2-step__text">
+                                <span>Select convenient flights and hotels</span> with high-quality service
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="position-relative main-block2-step">
+                            <div class="d-flex justify-content-center align-items-center bg-primary mb-md-3 text-white "
+                                style="width: 34px; height: 34px;">1</div>
+                            <div class="main-block2-step__title">Search for hotels and flights</div>
+                            <div class="main-block2-step__image">
+                                <img loading="lazy"
+                                    src="https://tumodo.io/storage/uploads/71f721774b97e906d99d483de3d6c7b3.jpeg"
+                                    alt="">
+                            </div>
+                            <div class="main-block2-step__text">
+                                <span>Select convenient flights and hotels</span> with high-quality service
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="main-block2--steps-bg"></div> -->
+                </div>
+            </div>
+
+            <div class="py-5">
+                <div class="">
+                    <div class="row row-gap-3">
+                        <div class="col-md-6">
+                            <div class="row row-gap-3 h-100 animate-on-scroll  flex-column">
+                                <div class="p-5 bg-primary border-radius-40">
+                                    <h2>Forget about manual data collection</h2>
+                                    <p>Analytics and reporting are always at hand and can be generated in a couple of
+                                        clicks
+                                    </p>
+                                    <div class="">
+                                        <img src="./first-card.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="p-1">
+                                    <div class="p-md-5 border-radius-40 " style="background: #d8dae7;">
+                                        <div class="d-md-flex justify-content-between">
+                                            <h3 style="font-size: 20px;">Book all your business travel needs on a
+                                                centralised
+                                                platform</h3>
+                                            <img src="https://tumodo.io/storage/uploads/da988e20129536840c77fc14dd74d1b1.svg"
+                                                style="width: 42px; height: 42px;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-2 px-1 pb-1 ">
+                                    <div class="animate-on-scroll">
+                                        <h2 class="title-h2">24/7 customer support</h2>
+                                        <p class="fs-16">We are always ready to assist you</p>
+                                    </div>
+
+                                    <div class="support-chat">
+                                        <!-- First chat block -->
+                                        <div class="support-chat__item">
+                                            <div
+                                                class="chat-client d-flex justify-content-end align-items-end gap-1 support-1">
+                                                <div class="support-chat__phrase "
+                                                    style="border-radius: 20px 20px 0px 20px;">
+                                                    <div class="support-chat__phrase-info">
+                                                        <span class="name">Employee:</span>
+                                                        <span class="date">16:29 </span>
+                                                    </div>
+                                                    <p>My flight was postponed by 6 hours, and I need to fly urgently.
+                                                        Could you exchange my ticket, please?</p>
+                                                </div>
+                                                <div class="support-chat__person">
+                                                    <img src="https://tumodo.io/storage/uploads/7ca37345585191f318905498c7dc3684.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="chat-support support-2 d-flex justify-content-start align-items-end gap-1">
+                                                <div class="support-chat__person">
+                                                    <img src="https://tumodo.io/storage/uploads/ae0f4c9d8c5b343e598df7ba56859fda.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="support-chat__phrase"
+                                                    style="border-radius: 20px 20px 20px 0px;">
+                                                    <div class="support-chat__phrase-info">
+                                                        <span class="name">Support manager:</span>
+                                                        <span class="date">16:30 </span>
+                                                    </div>
+                                                    <p>Hi! We found a flight for you in 40 minutes, already exchanging!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row row-gap-3   flex-column">
+                                <div class="col">
+                                    <div class="p-5 border-radius-40 bg-primary-100 ">
+                                        <h2>Webinar</h2>
+                                        <p>You will learn how we: save up to 35% of your travel budget</p>
+                                        <button class="btn mb-3 bg-light text-primary">Register</button>
+                                        <div class="">
+                                            <img src="./first-card.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-5 border-radius-40 bg-primary-100 ">
+                                        <h2 class="title-h2 fw-normal mb-3 pe-1" style="line-height: 104%;">
+                                            Set up travel policies and approval schemes — kee everything
+                                            under control</h2>
+                                        <div class="d-flex justify-content-end align-items-end">
+                                            <img src="https://tumodo.io/storage/uploads/f30f1dedcbcb319da96a2da1282a734f.png"
+                                                class="img-fluid bg-light" style="height: 138px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-4 border-radius-40 row flex-column align-items-center row-gap-3"
+                                        style="background-color: #f7f8fa;">
+                                        <div
+                                            class="companies-logotips d-flex align-items-center justify-content-center">
+                                            <img loading="lazy"
+                                                src="https://tumodo.io/storage/uploads/315553a479f75e970d194b7adab0dd03.svg"
+                                                alt="Tabby">
+                                            <img loading="lazy"
+                                                src="https://tumodo.io/storage/uploads/9704c2bd3b61715ef6afa003a567812a.svg"
+                                                alt="Sage">
+                                            <img loading="lazy"
+                                                src="https://tumodo.io/storage/uploads/226bd7c8787b9ad88c5b19763f121360.png"
+                                                alt="Binance">
+                                        </div>
+                                        <p class="text-center">Discover how we’re changing the business travel
+                                            experience of over 300
+                                            companies</p>
+                                        <div class="w-100 d-flex align-items-center justify-content-center">
+                                            <button class="btn btn-dark px-md-3 letter-spacing-2">Read the
+                                                stories</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="fullwdith py-5 cursor-pointer" style="background-color: #d8dae7;">
+            <div class="wrap">
+                <h2 style="    margin-bottom: 44px;">Calculate your savings with Eninrac</h2>
+                <div class="">
+                    <div class="row row-gap-3">
+                        <div class="col-md-6">
+                            <div class="">
+                                <div class="row row-gap-3">
+                                    <div class="col-md-6">
+                                        <div class="position-raltive border-radius-20 p-3 bg-light">
+                                            <p class="fs-16 fw-400">Total spend on travel by the company per month</p>
+                                            <p>0$ +</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="position-raltive border-radius-20 p-3 bg-light">
+                                            <p class="fs-16 fw-400">Total spend on travel by the company per month</p>
+                                            <p>0$ +</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="bg-light border-radius-20 p-3">
+                                            <p class="fs-16 fw-400">Number of employees</p>
+                                            <div
+                                                class="checkbox-list num-employee d-flex flex-wrap gap-2 align-items-center justify-content-start">
+                                                <label class="checkbox-item ">
+                                                    <input required="" checked="" type="radio" name="col-personal"
+                                                        value="10-20">
+                                                    <span class="">10-20</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" checked="" type="radio" name="col-personal"
+                                                        value="10-20">
+                                                    <span>10-20</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" checked="" type="radio" name="col-personal"
+                                                        value="10-20">
+                                                    <span>10-20</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" checked="" type="radio" name="col-personal"
+                                                        value="10-20">
+                                                    <span>10-20</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" checked="" type="radio" name="col-personal"
+                                                        value="10-20">
+                                                    <span>10-20</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="bg-light border-radius-20 p-3">
+                                            <p>Current process of arranging business trips</p>
+                                            <div
+                                                class="d-flex flex-column align-items-start justify-content-start row-gap-2">
+                                                <label class="checkbox-item _active">
+                                                    <input required="" type="radio" name="method" value="self">
+                                                    <span>Independently</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" type="radio" name="method" value="offline">
+                                                    <span>Agency</span>
+                                                </label>
+                                                <label class="checkbox-item">
+                                                    <input required="" type="radio" name="method" value="online">
+                                                    <span>Travel manager</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="bg-light border-radius-20 p-3 h-100 d-flex flex-column row-gap-3">
+                                <p>Result</p>
+                                <h2>Fill in all the fields and find out your benefits with Tumodo</h2>
+                                <button class="btn btn-primary " style="width: max-content;"> See the result</button>
+                                <div class="w-100">
+                                    <img src="https://tumodo.io/storage/uploads/5dfa2501099ba87f68175061d5cfa485.png"
+                                        class="img-fluid" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fullwidth py-5" style="background-color: #f7f8fa;">
+            <div class="wrap">
+                <h2 style="margin-bottom: 44px;">Read our insights</h2>
+                <div class="">
+                    <div class="row row-gap-5">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="w-100 p-4 border-radius-20" style="background-color: white;">
+                                <a href="" class="news-blog text-decoration-none text-dark">
+                                    <div class="w-100 mb-2 overflow-hidden news__image" style="height: 157px;">
+                                        <img src="https://tumodo.io/storage/uploads/013b03c919ea3381209347eb6957a028.png"
+                                            class=" img-fluid w-100 object-fit-cover d-block h-100" alt=""
+                                            style="transition: transform 0.2s linear;">
+                                    </div>
+                                    <div class="p-1 bg-primary rounded text-center text-light fs-12"
+                                        style="width: max-content;">
+                                        Articles
+                                    </div>
+                                    <div class="news-info">
+                                        <p class="fs-20 fw-600 mb-1">What to Include in an Employee Travel Policy?</p>
+                                        <div class="text-muted fs-14">
+                                            <span>10.06.2025</span><span>7 min</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="w-100 p-4 border-radius-20" style="background-color: white;">
+                                <a href="" class="news-blog text-decoration-none text-dark">
+                                    <div class="w-100 mb-2 overflow-hidden news__image" style="height: 157px;">
+                                        <img src="https://tumodo.io/storage/uploads/013b03c919ea3381209347eb6957a028.png"
+                                            class=" img-fluid w-100 object-fit-cover d-block h-100" alt=""
+                                            style="transition: transform 0.2s linear;">
+                                    </div>
+                                    <div class="p-1 bg-primary rounded text-center text-light fs-12"
+                                        style="width: max-content;">
+                                        Articles
+                                    </div>
+                                    <div class="news-info">
+                                        <p class="fs-20 fw-600 mb-1">What to Include in an Employee Travel Policy?</p>
+                                        <div class="text-muted fs-14">
+                                            <span>10.06.2025</span><span>7 min</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="w-100 p-4 border-radius-20" style="background-color: white;">
+                                <a href="" class="news-blog text-decoration-none text-dark">
+                                    <div class="w-100 mb-2 overflow-hidden news__image" style="height: 157px;">
+                                        <img src="https://tumodo.io/storage/uploads/013b03c919ea3381209347eb6957a028.png"
+                                            class=" img-fluid w-100 object-fit-cover d-block h-100" alt=""
+                                            style="transition: transform 0.2s linear;">
+                                    </div>
+                                    <div class="p-1 bg-primary rounded text-center text-light fs-12"
+                                        style="width: max-content;">
+                                        Articles
+                                    </div>
+                                    <div class="news-info">
+                                        <p class="fs-20 fw-600 mb-1">What to Include in an Employee Travel Policy?</p>
+                                        <div class="text-muted fs-14">
+                                            <span>10.06.2025</span><span>7 min</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="fullwidth py-5">
+            <div class="wrap">
+                <div class="d-flex flex-column gap-4 morethan">
+                    <h2 class="title-h2 text-center ">More than 300 companies trust Tumodo</h2>
+                    <div class="">
+                        <div class="logo-carousel owl-carousel">
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/b04da7331943d3782be850cecae3fbe9.png"
+                                    alt="Gulf">
+                            </div>
+                            <div class="item w-100"><img
+                                    src="https://tumodo.io/storage/uploads/1e52d81a3cbde8f03c274473f175dd41.svg" alt="">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/e6ebd704c874ab2bc55a48768ba6ffb8.png"
+                                    alt="Gulf">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/b04da7331943d3782be850cecae3fbe9.png"
+                                    alt="Gulf">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/badd2a0b1bc04107e1bc58e4d69c9e1a.svg"
+                                    alt="Denuo">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/1aae929890fdf5f60049311b01000509.svg"
+                                    alt="Bakertilly"></div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/1e52d81a3cbde8f03c274473f175dd41.svg" alt="">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/e6ebd704c874ab2bc55a48768ba6ffb8.png"
+                                    alt="Gulf">
+                            </div>
+                            <div class="item w-100"><img class="img-fluid"
+                                    src="https://tumodo.io/storage/uploads/b04da7331943d3782be850cecae3fbe9.png"
+                                    alt="Gulf">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center ">
+                        <button class="btn btn-dark">Read the stories</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scroll-section">
+        <div class="fullwidth py-5">
+            <div class="wrap">
+                <section class="scroll-section">
+                    <div class="scroll-list row row-gap-3">
+                        <!-- Left Side: Texts -->
+                        <div class="scroll-list-texts col-md-5">
+                            <div class="scroll-list-item js-scroll-list-item" data-image="first-card.png">
+                                <div class="scroll-list-item__number">1/5 advantages of Tumodo</div>
+                                <div class="title-h2">Arrange a business trip in 2 minutes</div>
+                                <div class="scroll-list-item__text">
+                                    <p>Manage business trips with Tumodo easily. Book tickets and accommodation in just
+                                        a couple of clicks.</p>
+                                </div>
+                            </div>
+                            <div class="scroll-list-item js-scroll-list-item" data-image="img2.jpg">
+                                <div class="scroll-list-item__number ">2/5 advantages of Tumodo</div>
+                                <div class="title-h2">Corporate travel simplified</div>
+                                <div class="scroll-list-item__text">
+                                    <p>Manage business trips with Tumodo easily. Book tickets and accommodation in just
+                                        a couple of clicks, accumulate personal and corporate bonuses and monitor travel
+                                        statuses online. Use Tumodo where it is convenient for you: telephone, mail,
+                                        compute.</p>
+                                </div>
+                            </div>
+                            <div class="scroll-list-item js-scroll-list-item" data-image="first-card.png">
+                                <div class="scroll-list-item__number">2/5 advantages of Tumodo</div>
+                                <div class="title-h2">Corporate travel simplified</div>
+                                <div class="scroll-list-item__text">
+                                    <p>Set up integration with your accounting system and collect all necessary
+                                        documents automatically. Forget about manual data input and receive flight
+                                        certificates in case of lost boarding passes.</p>
+                                </div>
+                            </div>
+                            <!-- Add more items (3, 4, 5) similarly -->
+                        </div>
+
+                        <!-- Right Side: Sticky Image -->
+                        <div class="scroll-list-image col-md-7 desktop-only">
+                            <img id="active-image" src="./first-card.png" alt="Active Image">
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fullwidth py-5">
+            <div class="wrap faq-wrap">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="">
+                            <h2>FAQ</h2>
+                            <p>Didn't find the answer?
+                                <br> Email us at
+                                <a class="link-primary text-decoration-none"
+                                    href="mailto:connect@eninrac.com">connect@eninrac.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="faq-list">
+                            <div class="faq-item p-3 p-md-4 js-faq-item">
+                                <p class="faq-item-question d-flex justify-content-between align-items-center mb-0">
+                                    <span>What is the pricing for your platform?</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </p>
+                                <p class="faq-item-answear" style="display: none;">We operate on a service fee model.
+                                    You only pay for the services you actually book.</p>
+                            </div>
+                            <div class="faq-item p-3 p-md-4 js-faq-item">
+                                <p class="faq-item-question d-flex justify-content-between align-items-center mb-0">
+                                    <span>How does it work?</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </p>
+                                <p class="faq-item-answear" style="display: none;">You browse, book, and pay for only
+                                    the services you use—no hidden charges.</p>
+                            </div>
+                        </div>
+
+                        <script>
+                            const faqItems = document.querySelectorAll('.js-faq-item');
+
+                            faqItems.forEach(item => {
+                                const question = item.querySelector('.faq-item-question');
+
+                                question.addEventListener('click', () => {
+                                    const isActive = item.classList.contains('active');
+                                    // Close all answers first
+                                    faqItems.forEach(i => {
+                                        i.querySelector('.faq-item-answear').style.display = 'none';
+                                        i.classList.remove('active');
+                                    });
+
+                                    // Toggle the clicked one
+                                    if (!isActive) {
+                                        item.querySelector('.faq-item-answear').style.display = 'block';
+                                        item.classList.add('active');
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form-section">
+        <div class="fullwidth py-5">
+            <div class="wrap">
+                <div class="trial-form-top">
+                    <h2 class="text-center">Get started</h2>
+                    <p class="text-center">
+                        Fill out the short form to find out how Tumodo works
+                    </p>
+                </div>
+                <div class="trial-contact-form">
+                    <form action="">
+                        <div class="row row-gap-3">
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="name" placeholder="name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="company" placeholder="company">
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <input class="form-control" type="email" name="email" placeholder="email">
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <input class="form-control" type="number" name="phone" placeholder="+91 1234567890">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-dark w-100">get started</button>
+                                <p class="mt-2 text-center ">
+                                    <span class="opacity-50"> By submitting this form, you agree to our</span> <a
+                                        href="#">Privacy Policy</a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-top d-flex flex-wrap" style="  border-bottom: 1px solid #404040;">
+                <div class="">
+                    <div class="footer-nav-column">
+                        <div class="footer-top__title">Company</div>
+                        <ul class="d-flex flex-column gap-1 list-unstyled m-0 p-0">
+                            <li>
+                                <a href="/ae-en/about">About us</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/contacts">Contacts</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/career">Career</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="footer-nav-column">
+                        <div class="footer-top__title">Resources</div>
+                        <ul class="d-flex flex-column gap-1 list-unstyled m-0 p-0">
+                            <li>
+                                <a href="/ae-en/resources/research-reports">Research Reports</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/resources/vantedge-plus">Vantedge+</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/resources/omnicore-plus">Omnicore+</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/resources/knowledge-grid">Knowledge Grid</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/resources/geography">Geography</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="">
+                    <div class="footer-nav-column">
+                        <div class="footer-top__title">Services</div>
+                        <ul class="d-flex flex-column gap-1 list-unstyled m-0 p-0">
+                            <li>
+                                <a href="/ae-en/service/advisory-consulting">Advisory & Consulting Services</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/service/market-research">Market Research Services</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/service/strategy-innovation">Strategy & Innovation</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/service/transformation-sustainability">Transformation &
+                                    Sustainability</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/service/training-pro-bono">Training & Pro Bono</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    <div class="footer-nav-column">
+                        <div class="footer-top__title">Products</div>
+                        <ul class="d-flex flex-column gap-1 list-unstyled m-0 p-0">
+                            <li>
+                                <a href="/ae-en/products/energy-infra-market">Energy Infra Market</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/market-research-reports">Market Research Reports</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/visionboard">Visionboard</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/open-access-d2i-tool">Open Access D2I Tool</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/power-tariff-d2i-tool">Power Tariff D2I Tool</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/electric-vehicle-mrac-plus-tool">Electric Vehicle MRAC+
+                                    Tool</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/solar-mrac-plus-tool">Solar MRAC+ Tool</a>
+                            </li>
+                            <li>
+                                <a href="/ae-en/products/wind-mrac-plus-tool">Wind MRAC+ Tool</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="certificates-wrap flex-grow-0">
+                    <div class="certificates " style="width: 300px;">
+                        <div class="footer-top__title">Certified</div>
+                        <div class="certificates-list">
+                            <img loading="lazy"
+                                src="https://tumodo.io/storage/uploads/b363491423dd23c0a9f0fb05741a5687.svg" alt="">
+                        </div>
+                        <div class="certificates-list certificates-list--white">
+                            <img loading="lazy"
+                                src="https://tumodo.io/storage/uploads/2d080829d1492c396868451a03d0f785.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom pt-3 row row-gap-3">
+                <div class="col-md-4">
+                    <div class="footer-info">
+                        <div class="footer-logo" style="max-width: 150px;">
+                            <img src="https://eninrac.com/assets/images/logo_dark.png" alt="Tumodo: business travel">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class=""></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </body>
 
 </html>

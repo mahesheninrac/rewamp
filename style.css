@@ -635,7 +635,7 @@ body {
 .scroll-section {
     display: flex;
     justify-content: center;
-    padding: 50px 0px;
+    /* padding: 50px 0px; */
 }
 
 .scroll-list {
@@ -649,7 +649,7 @@ body {
 }
 
 .scroll-list-item {
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     /* spacing between texts */
 }
 
